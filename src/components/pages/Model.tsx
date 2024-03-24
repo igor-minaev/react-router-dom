@@ -5,16 +5,16 @@ import {useParams} from 'react-router-dom';
 export const Model = () => {
     const params = useParams()
     console.log(params)
-    const el: AdidasItem | undefined = adidasArr.find(el => el.id === Number(params.id))
+    const currentModel= adidasArr.find(el => el.id === Number(params.id))
     return (
 
         <div style={{textAlign: 'center'}}>
-            {el
+            {currentModel
                 ? <>
-                    <h2>{el.model}</h2>
-                    <p>{el.collection}</p>
-                    <p>{el.price}</p>
-                    <img src={el.picture} alt="shoes"/>
+                    <h2>{currentModel.model}</h2>
+                    <p>{currentModel.collection}</p>
+                    <p>{currentModel.price}</p>
+                    <img src={currentModel.picture} alt="shoes"/>
                 </>
                 : <h3>Модуль отсутствует</h3>}
 
